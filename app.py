@@ -12,6 +12,7 @@ df_month = pd.read_csv('./monthly_temp.csv')
 df_week = pd.read_csv('./weekly_temp.csv')
 
 df_month['date'] = pd.to_datetime(df_month['date'], format='%Y-%m-%d')
+df_month['date'] = df_month['date'].apply(lambda x: datetime.combine(x, time.min))
 df_month = df_month.sort_values(by='date')
 
 df_2023 = df_month[df_month['year'] == 2023]
