@@ -62,7 +62,7 @@ fig_scatter = px.scatter_mapbox(
         "min_temp_monthly": True,
         "avg_temp_monthly": True
     },
-    animation_frame="date",
+    animation_frame="month-year",
     color_continuous_scale=px.colors.sequential.Blues,
     title="Humidity & Temperature",
     mapbox_style="carto-positron",
