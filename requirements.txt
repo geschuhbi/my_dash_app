@@ -1,0 +1,7 @@
+dash==2.10.2
+gunicorn
+plotly==5.15.0
+dash-tools
+
+pandas
+scikit-learn
