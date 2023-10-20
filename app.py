@@ -6,13 +6,14 @@ import dash_table
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import plotly.express as px
+from datetime import datetime, time
 
 
 df_month = pd.read_csv('./monthly_temp.csv')
 df_week = pd.read_csv('./weekly_temp.csv')
 
 df_month['date'] = pd.to_datetime(df_month['date'], format='%Y-%m-%d')
-df_month['date'] = df_month['date'].apply(lambda x: datetime.combine(x, time.min))
+df_month['date_with_time'] = df_month['date'].apply(lambda x: datetime.combine(x.date(), time.min))
 df_month = df_month.sort_values(by='date')
 
 df_2023 = df_month[df_month['year'] == 2023]
@@ -63,7 +64,7 @@ fig_scatter = px.scatter_mapbox(
         "min_temp_monthly": True,
         "avg_temp_monthly": True
     },
-    animation_frame="date",
+    animation_frame="date_with_time",
     color_continuous_scale=px.colors.sequential.Blues,
     title="Humidity & Temperature",
     mapbox_style="carto-positron",
