@@ -102,7 +102,8 @@ stripes_fig = px.bar(df_station,
 stripes_graph = dcc.Graph(figure= stripes_fig)
 
 ########## DASH APP ########
-pp = dash.Dash(external_stylesheets=[dbc.themes.QUARTZ])
+app = dash.Dash(external_stylesheets=[dbc.themes.QUARTZ])
+server = app.server
 
 # Dropdown for table
 dropdown_table_city = dcc.Dropdown(

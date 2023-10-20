@@ -1,7 +1,16 @@
-dash==2.10.2
-gunicorn
-plotly==5.15.0
-dash-tools
-
-pandas
 scikit-learn
+dash == 2.14.0
+gunicorn
+dash-bootstrap-components
+dash-core-components
+dash-html-components
+plotly == 5.17.0
+pandas
+sqlalchemy == 2.0.22
+psycopg2 == 2.9.9
+
+
+
+
+
+
